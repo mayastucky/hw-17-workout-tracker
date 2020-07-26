@@ -11,11 +11,13 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+// app.use(require("./routes/apiRoutes.js"));
+// app.use(require("./routes/htmlRoutes.js"));
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/workout",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 const connection = mongoose.connection;
 
 connection.on("connected", () => {
@@ -33,6 +35,9 @@ app.get("/api/config", (req, res) => {
 });
 
 // app.use(PizzaController);
+// require("./routes/htmlRoutes.js")(app);
+require("./routes/htmlRoutes.js")(app);
+require("./routes/htmlRoutes")(app);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

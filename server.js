@@ -31,8 +31,10 @@ app.get("/api/config", (req, res) => {
   });
 });
 
+require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes.js")(app);
 require("./routes/htmlRoutes")(app);
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

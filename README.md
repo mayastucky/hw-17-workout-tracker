@@ -1,12 +1,18 @@
 # hw-17-workout-tracker
 
-## Installation 
-Run `npm install` after cloning the repo from my GitHub. Then, run node server.js in your terminal. 
+## Installation
+
+Run `npm install` after cloning the repo from my GitHub. Then, run node server.js in your terminal.
+
+![](home.png)
+![](dashboard.png)
 
 ## Usage
-This application was designed to utilize Mongo/Mongoose and deploying NoSQL databases to Heroku. 
 
-## Contributing 
+This application was designed to utilize Mongo/Mongoose and deploying NoSQL databases to Heroku.
+
+## Contributing
+
 This was a solo project completed for homework for the Georgia Tech Full-Stack Web Development Bootcamp. As always, the biggest shout-out to my classmates and TAs who are always ready to problem solve.
 
 ## License

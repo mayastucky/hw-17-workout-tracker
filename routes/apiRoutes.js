@@ -48,14 +48,18 @@ module.exports = function (app) {
       });
   });
 
-  //allows users to update pre-existing workouts
+  
   //documentation for findByIdAndUpdate:
   //https://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate
   app.put("/api/workouts/:id", function (req, res) {
     db.Workout.findByIdAndUpdate(
       //first arg is the ID, second is what you want to update
       { _id: req.params.id },
-      { exercises: req.body }
+      //now we need to push the new exercise to the exercises array
+      //we also need to add/increment the duration that the user input into the correct field so it doesn't stay at 0
+      //in other words, in the model, the totalDuration field gets incremented 
+      { $push: { exercises: req.body }, $inc: {totalDuration : req.body.duration} }, 
+
     )
       .then(function (data) {
         res.json(data);

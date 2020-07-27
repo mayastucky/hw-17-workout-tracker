@@ -15,6 +15,7 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/stats.html"));
   });
 
+  //if you send me garbage i will redirect you home 
   app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
